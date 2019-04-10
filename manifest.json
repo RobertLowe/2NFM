@@ -8,10 +8,10 @@
    "homepage_url": "https://github.com/codysherman/2NFM/tree/master",
    "background":{
       "scripts":[
-         "background/helpers/socket.io.js",
-         "background/helpers/adapter.js",
-         "background/helpers/RTCMultiConnection.js",
-         "background/helpers/IceServersHandler.js",
+         "shared/socket.io.js",
+         "shared/adapter.js",
+         "shared/RTCMultiConnection.js",
+         "shared/IceServersHandler.js",
          "background/helpers/MultiStreamsMixer.js",
          "background/helpers/AntMediaWrapper.js",
          "background/globals.js",
