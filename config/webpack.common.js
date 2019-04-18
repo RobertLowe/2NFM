@@ -47,6 +47,17 @@ module.exports = {
       }
     ])
   ],
+  externals: {
+    // NOTE: if for some reason need to pull a package externally like from a CDN
+    // lodash: '_',
+    // google: 'google',
+  },
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    }]
+  },
   node: {
     global: false,
     process: false,
