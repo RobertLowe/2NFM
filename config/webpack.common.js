@@ -44,5 +44,8 @@ module.exports = {
     __filename: false,
     __dirname: false,
     setImmediate: false
+  },
+  devServer: {
+    contentBase: './'
   }
 };
