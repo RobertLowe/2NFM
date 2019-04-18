@@ -8,7 +8,7 @@ var server = require('http'),
 
 function serverHandler(request, response) {
     var uri = url.parse(request.url).pathname,
-        filename = path.join(process.cwd(), uri);
+        filename = path.join(__dirname, './docs', uri);
 
     fs.exists(filename, function(exists) {
         if (!exists) {

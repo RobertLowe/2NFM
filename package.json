@@ -9,6 +9,7 @@
     "build": "webpack --config config/webpack.prod.js",
     "build:dev": "webpack --config config/webpack.dev.js",
     "start": "webpack-dev-server --config config/webpack.dev.js",
+    "start:prod": "npm run build && node server.js",
     "watch": "nodemon --ext css,html,js,json -i manifest.bundle.js -i scripts.bundle.js --exec npm run build:dev"
   },
   "repository": {
