@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 // NOTE: if later using ./docs to serve from GitHub Pages
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -12,8 +13,8 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     // NOTE: if later using ./docs to serve from GitHub Pages
-    // path: path.resolve(__dirname, '../docs'),
-    // publicPath: '/'
+    path: path.resolve(__dirname, '../docs'),
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.json', '.css'],
@@ -28,14 +29,23 @@ module.exports = {
       minChunks: Infinity
     }),
     // NOTE: if later using ./docs to serve from GitHub Pages
-    // new CopyWebpackPlugin([
-    //   { from: 'assets/*', to: './docs' },
-    //   {
-    //     context: './',
-    //     from: '*.html',
-    //     to: './[name]'
-    //   }
-    // ])
+    new CopyPlugin([
+      {
+        context: './',
+        from: '*.{html,css,png}',
+        to: './[name].[ext]'
+      },
+      {
+        context: './frow',
+        from: 'frow.css',
+        to: './'
+      },
+      {
+        context: './shared',
+        from: '*.js',
+        to: './'
+      }
+    ])
   ],
   node: {
     global: false,
@@ -46,6 +56,6 @@ module.exports = {
     setImmediate: false
   },
   devServer: {
-    contentBase: './'
+    contentBase: [path.resolve(__dirname, '../shared'), path.resolve(__dirname, '../frow')],
   }
 };

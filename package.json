@@ -27,6 +27,7 @@
     "webpack-merge": "^4.1.5"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^4.6.0",
     "frow": "^3.0.4"
   }
 }
