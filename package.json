@@ -4,10 +4,11 @@
   "description": "No more maintaining this extension; as of 2019. So please use at your own risk.",
   "main": "server.js",
   "scripts": {
+    "build": "webpack --config config/webpack.dev.js",
     "prepare": "mkdir -p frow && cp node_modules/frow/dist/* frow/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:server": "node server.js",
-    "start": "nodemon --ext css,html,js,json --exec npm run start:server"
+    "start:server": "npm run build && node server.js",
+    "start": "nodemon --ext css,html,js,json -i manifest.bundle.js -i scripts.bundle.js --exec npm run start:server"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
   },
   "homepage": "https://github.com/codysherman/2NFM#readme",
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.5"
   },
   "dependencies": {
     "frow": "^3.0.4"

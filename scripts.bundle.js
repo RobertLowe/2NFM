@@ -1,3 +1,7 @@
+webpackJsonp([0],[
+/* 0 */
+/***/ (function(module, exports) {
+
 (function() {
   var params = {},
       r = /([^&=]+)=?([^&]*)/g,
@@ -401,3 +405,7 @@ document.addEventListener('copy', function(e) {
   e.clipboardData.setData('text/plain', e.target.textContent);
   e.preventDefault();
 });
+
+/***/ })
+],[0]);
+//# sourceMappingURL=scripts.bundle.js.map
