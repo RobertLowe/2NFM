@@ -408,4 +408,3 @@ document.addEventListener('copy', function(e) {
 
 /***/ })
 ],[0]);
-//# sourceMappingURL=scripts.bundle.js.map

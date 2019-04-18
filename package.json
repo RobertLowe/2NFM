@@ -6,6 +6,7 @@
   "scripts": {
     "prepare": "mkdir -p frow && cp node_modules/frow/dist/* frow/",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config config/webpack.prod.js",
     "build:dev": "webpack --config config/webpack.dev.js",
     "start": "webpack-dev-server --config config/webpack.dev.js",
     "watch": "nodemon --ext css,html,js,json -i manifest.bundle.js -i scripts.bundle.js --exec npm run build:dev"

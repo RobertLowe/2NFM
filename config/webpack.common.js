@@ -54,8 +54,5 @@ module.exports = {
     __filename: false,
     __dirname: false,
     setImmediate: false
-  },
-  devServer: {
-    contentBase: [path.resolve(__dirname, '../shared'), path.resolve(__dirname, '../frow')],
   }
 };
